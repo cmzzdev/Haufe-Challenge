@@ -22,6 +22,7 @@ const PORT = process.env.PORT || 4000;
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/user', require('./routes/user'));
 app.use('/api/character', require('./routes/character'));
+app.use('/api/favorite', require('./routes/favorite'));
 
 
 // server up

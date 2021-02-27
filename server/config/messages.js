@@ -11,5 +11,10 @@ module.exports = {
     USER_DONT_EXIST: 'User dont exist',
     INVALID_PASSWORD: 'Invalid Password',
     USER_EXISTS: 'This user already exists', 
-    PAGE_REQUIRED: 'The page(int num) is required'
+    PAGE_REQUIRED: 'The page(int) is required',
+    ID_REQUIRED: 'The id(int) character is required',   
+    FAVORITE_EXIST: 'This character is already in your favorites',
+    FAVORITE_NOT_FOUND: 'This favorite not found',
+    FAVORITE_UNAUTHORITZED: 'Unauthoritzed, this favorite is not yours',
+    FAVORITE_DELETED: 'Your favorite character deleted'
 }
