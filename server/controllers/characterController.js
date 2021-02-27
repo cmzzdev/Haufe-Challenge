@@ -1,3 +1,4 @@
+const Favorite = require('../models/Favorite');
 require('dotenv').config({path: 'vars.env'});
 const axios = require('axios')
 const { SERVER_ERROR, ERROR_EXTERNAL_API } = require('../config/messages')
@@ -18,6 +19,16 @@ exports.getCharacters = async (req, res) => {
             .catch(err => {                
                 res.status(404).json({ errors: { msg: ERROR_EXTERNAL_API } })
             });
+        
+        let favorites = await Favorite.find({creator: req.user.id})
+
+        if(favorites){
+            favorites.map(favorite => {
+                characters.results.filter(character => {
+                    return character.id === favorite.id ? character.favorite = true : ''
+                })
+            })
+        }      
 
         res.json(characters);        
         
@@ -41,6 +52,12 @@ exports.getCharacterById = async (req, res) => {
                 res.status(404).json({ errors: { msg: ERROR_EXTERNAL_API } })
             });
         
+        let isFavorite = await Favorite.findOne({creator: req.user.id, id: id})
+        
+        if(isFavorite){
+            character.favorite = true
+        }
+
         res.json(character)
 
     } catch (error) {
