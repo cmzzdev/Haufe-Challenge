@@ -1,6 +1,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
+const { SERVER_STARTED } = require('./config/messages');
 
 // create server
 const app = express();
@@ -22,5 +23,5 @@ const PORT = process.env.PORT || 4000;
 
 // server up
 app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`)
+    console.log(SERVER_STARTED + PORT)
 });

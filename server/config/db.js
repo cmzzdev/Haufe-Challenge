@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config({path: 'vars.env'});
+const { MONGO_CONECTED } = require('./messages');
 
 const connectDB = async () => {
     try {
@@ -9,7 +10,7 @@ const connectDB = async () => {
             useFindAndModify: false,
             useCreateIndex: true
         })
-        console.log('MongoDB connected')
+        console.log(MONGO_CONECTED)
     } catch (error) {
         console.log(error);
         process.exit(1); // Stop API
