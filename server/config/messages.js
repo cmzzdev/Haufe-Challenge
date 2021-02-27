@@ -6,5 +6,8 @@ module.exports = {
     INVALID_TOKEN: 'Invalid token',
     NAME_REQUIRED: 'The name is required',  
     EMAIL_VALID: 'Please add a valid email',    
-    PASSWORD_VALID: 'The password must be at least 6 characters'
+    PASSWORD_VALID: 'The password must be at least 6 characters',
+    USER_DONT_EXIST: 'User dont exist',
+    INVALID_PASSWORD: 'Invalid Password',
+    USER_EXISTS: 'This user already exists'
 }
