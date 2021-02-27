@@ -19,6 +19,7 @@ app.use(express.json({ extended: true}));
 const PORT = process.env.PORT || 4000;
 
 // import routes
+app.use('/api/auth', require('./routes/auth'));
 
 
 // server up
