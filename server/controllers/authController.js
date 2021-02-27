@@ -13,6 +13,8 @@ exports.createUserToken = async (req, res) => {
         return res.status(400).json({ errors: errors.array() })
     }
 
+    console.log(req.body)
+
     const { email, password } = req.body;
 
     try {
@@ -22,7 +24,7 @@ exports.createUserToken = async (req, res) => {
             return res.status(400).json({ errors: { msg: USER_DONT_EXIST }} )
         }
 
-        const correcPassword = await bcrypjs.compare(password. user.password);
+        const correcPassword = await bcrypjs.compare(password, user.password);
         if(!correcPassword){
             return res.status(400).json({ errors: { msg: INVALID_PASSWORD }} )
         }
@@ -41,6 +43,7 @@ exports.createUserToken = async (req, res) => {
         });
         
     } catch (error) {
+        console.log(error)
         res.status(500).json({ errors: { msg: SERVER_ERROR }} )
     }
 }
