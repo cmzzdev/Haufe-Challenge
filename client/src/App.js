@@ -11,6 +11,7 @@ import AuthState from 'context/auth/authState'
 import Header from 'layout/Header'
 
 import LoginPage from 'pages/Login'
+import RegisterPage from 'pages/Register'
 import ListPage from 'pages/List'
 import DetailPage from 'pages/Detail'
 
@@ -23,11 +24,12 @@ function App() {
   return (
     <Provider store={store}>
       <AuthState>
-        <div className="App">
-          <Header />
+        <div className="App">          
           <Router>  
+            <Header />
             <Switch>
               <Route exact path="/" component={LoginPage} />
+              <Route exact path="/register" component={RegisterPage} />
               <PrivateRoute exact patch="/list" component={ListPage} />
               <PrivateRoute exact patch="/detail/:id" component={DetailPage} />
             </Switch>

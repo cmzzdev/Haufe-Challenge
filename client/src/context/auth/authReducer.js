@@ -50,7 +50,8 @@ const authReducer = (state, action) =>  {
                 user: null, 
                 token: null,
                 auth: null,
-                msg: null
+                msg: null,
+                isLoadingAuth: false
             }
         default: 
             return state

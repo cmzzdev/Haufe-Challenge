@@ -1,18 +1,19 @@
 import React from 'react';
-import './login.css';
+import './register.css';
 import useValidation from 'hooks/useValidation'
 import { validateLoginForm } from 'utils/validateForm'
 
 const INITIAL_VALUES = {
+    name: '',
     email: '',
     password: ''
 }
 
-const Login = ({initSession}) => {  
+const Register = ({createUser}) => {  
 
     const submitForm = () => {
         console.log("handleSubmit")
-        initSession({email,password})
+        createUser({name, email,password})
     }
 
     const {
@@ -22,16 +23,40 @@ const Login = ({initSession}) => {
         handleChange,
     } = useValidation(INITIAL_VALUES, validateLoginForm, submitForm)    
 
-    const { email, password } = values    
+    const { name, email, password } = values    
 
     return ( 
-        <div className="login-wrapper">
+        <div className="regist-wrapper">
             <div>
                 <div>                   
 
                     <form
                         onSubmit={handleSubmit}
                     >
+                         <div>
+                            <label                            
+                                htmlFor="name"
+                            >
+                                Name
+                            </label>   
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your name"
+                                value={name}      
+                                onChange={(e) => handleChange(e)}                    
+                            /> 
+                            {
+                                errors.name ? (
+                                    <div>
+                                        <p>Error</p>
+                                        <p>{errors.name}</p>
+                                    </div> 
+                                ) : null
+                            }
+                        </div>
+
                         <div>
                             <label                            
                                 htmlFor="email"
@@ -91,4 +116,4 @@ const Login = ({initSession}) => {
     );
 }
  
-export default Login;
+export default Register;
