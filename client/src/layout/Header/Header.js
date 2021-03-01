@@ -1,27 +1,32 @@
 import React, { useContext, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+
+import { Link, useLocation, useHistory } from 'react-router-dom'
 import authContext from 'context/auth/authContext'
 
 import './header.css'
 
+
 const Header = () => {
 
     const AuthContext = useContext(authContext)
-    const { user, authUser, closeSession } = AuthContext
+    const { user, authUser, auth, closeSession } = AuthContext
+     const history = useHistory();
 
     useEffect(() => {  
         const token = localStorage.getItem('token'); 
         if(token){
             authUser()
-        }
+        }  
         // eslint-disable-next-line
     }, []); 
 
     const location = useLocation();
+   
 
     const handleClick = e => {
         e.preventDefault()
-        closeSession()        
+        closeSession();        
+        //history.push('/')        
     }
 
     return ( 
@@ -34,7 +39,7 @@ const Header = () => {
                     { user && authUser ? (
                         <>
                             
-                            <img src='/img/morty.png' alt='hello'/>
+                            <img src='/img/rick.png' alt='hello'/>
                             <p className="salute">Hi - { user.name } </p>  
                             <button
                                 className="btn"

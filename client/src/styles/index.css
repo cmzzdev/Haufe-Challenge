@@ -1,4 +1,11 @@
 
+:root{
+  --main-color: #A5E1E4;
+  --bg-color: #E9F7F8;
+  --text-color: #53C6CC;  
+  --secondary-text-color: #fff;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -13,8 +20,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; 
-  color: #fff;
-  
+  color: var(--text-color);
+  background-color: var(--bg-color)  
 }
 
 code {
@@ -34,16 +41,9 @@ a{
   min-height: 100vh;
 }
 
-
-@media (min-width: 1280px){
+@media (min-width: 640px){
   .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1024px){
-  .container {
-    max-width: 1024px;
+    max-width: 640px;
   }
 }
 
@@ -53,9 +53,15 @@ a{
   }
 }
 
-@media (min-width: 640px){
+@media (min-width: 1024px){
   .container {
-    max-width: 640px;
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container {
+    max-width: 1280px;
   }
 }
 
@@ -94,9 +100,9 @@ input:focus, button:focus{
 
 .title{
   text-align: center;
-  color: #A5E1E4;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  color: var(--main-color);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .btn{

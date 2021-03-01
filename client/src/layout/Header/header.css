@@ -9,11 +9,13 @@ header{
 
 .brand h1{
     font-size: 1.5rem;
+    color: var(--secondary-text-color);
 }
 
 .salute{
     margin-right: 1rem;
     display: inline-block;
+    color: var(--secondary-text-color);
 }
 
 .row{

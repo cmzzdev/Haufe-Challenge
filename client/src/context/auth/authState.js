@@ -10,7 +10,8 @@ import {
     USER_AUTH,
     CLOSE_SESSION,
     IS_LOADING_USER,
-    CLEAN_ALERT
+    CLEAN_ALERT,
+    CLEAN_CHARACTERS
 } from 'types'
 
 import axiosClient from 'config/axios'
@@ -112,7 +113,7 @@ const AuthState= ({children}) => {
     const closeSession = () => {
         dispatch({
             type: CLOSE_SESSION
-        })
+        })      
     }
 
     return ( 
