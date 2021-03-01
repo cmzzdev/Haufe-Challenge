@@ -1,7 +1,9 @@
-import React from 'react';
-import './register.css';
+import React from 'react'
+import './register.css'
+import 'styles/form.css'
+import Alert from 'components/Alert'
 import useValidation from 'hooks/useValidation'
-import { validateLoginForm } from 'utils/validateForm'
+import { validateRegisterForm } from 'utils/validateForm'
 
 const INITIAL_VALUES = {
     name: '',
@@ -9,37 +11,41 @@ const INITIAL_VALUES = {
     password: ''
 }
 
-const Register = ({createUser}) => {  
+const Register = ({createUser, msg}) => {  
 
-    const submitForm = () => {
-        console.log("handleSubmit")
+    const submitForm = () => {        
         createUser({name, email,password})
     }
-
+    
     const {
         values,
         errors,
         handleSubmit,
         handleChange,
-    } = useValidation(INITIAL_VALUES, validateLoginForm, submitForm)    
+    } = useValidation(INITIAL_VALUES, validateRegisterForm, submitForm)    
 
     const { name, email, password } = values    
 
     return ( 
-        <div className="regist-wrapper">
-            <div>
-                <div>                   
-
+        <div className="register-wrapper">     
+            <h2 className="title">Register</h2>       
+            { msg && (
+                <Alert msg={msg} />
+            )}
+            <div className="justify-form">
+                <div className="form-content">                   
                     <form
+                        className="form"
                         onSubmit={handleSubmit}
                     >
-                         <div>
+                        <div className="field-content">
                             <label                            
                                 htmlFor="name"
                             >
                                 Name
                             </label>   
                             <input
+                                className="input-field"
                                 type="text"
                                 id="name"
                                 name="name"
@@ -49,21 +55,22 @@ const Register = ({createUser}) => {
                             /> 
                             {
                                 errors.name ? (
-                                    <div>
-                                        <p>Error</p>
+                                    <div className="error-content">
+                                        <p className="font-bold">Error</p>
                                         <p>{errors.name}</p>
                                     </div> 
                                 ) : null
                             }
                         </div>
 
-                        <div>
+                        <div className="field-content">
                             <label                            
                                 htmlFor="email"
                             >
                                 Email
                             </label>   
                             <input
+                                className="input-field"
                                 type="email"
                                 id="email"
                                 name="email"
@@ -73,21 +80,22 @@ const Register = ({createUser}) => {
                             /> 
                             {
                                 errors.email ? (
-                                    <div>
-                                        <p>Error</p>
+                                    <div className="error-content">
+                                        <p className="font-bold">Error</p>
                                         <p>{errors.email}</p>
                                     </div> 
                                 ) : null
                             }
                         </div>
 
-                        <div>
+                        <div className="field-content">
                             <label                            
                                 htmlFor="password"
                             >
                                 Password
                             </label>   
                             <input
+                                className="input-field"
                                 type="password"
                                 id="password"
                                 name="password"
@@ -97,17 +105,20 @@ const Register = ({createUser}) => {
                             /> 
                             {
                                 errors.password ? (
-                                    <div>
-                                        <p>Error</p>
+                                    <div className="error-content">
+                                        <p className="font-bold">Error</p>
                                         <p>{errors.password}</p>
                                     </div> 
                                 ) : null
                             }
                         </div>
 
-                        <input
-                            type="submit"
-                        />
+                        <div className="text-center">
+                            <button
+                                type="submit"
+                                className="btn"                            
+                            >Submit</button>
+                        </div>
 
                     </form>
                 </div>

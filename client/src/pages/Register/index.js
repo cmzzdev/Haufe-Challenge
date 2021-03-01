@@ -6,7 +6,7 @@ import authContext from 'context/auth/authContext'
 const RegisterPage = () => {
     
     const AuthContext = useContext(authContext)
-    const { auth, isLoadingAuth, createUser } = AuthContext
+    const { auth, isLoadingAuth, createUser, msg } = AuthContext
 
     const history = useHistory();
     
@@ -14,13 +14,14 @@ const RegisterPage = () => {
         if(auth){
             history.push('/list')
         }
-    })    
+    })        
 
     return ( 
         <> 
             { !isLoadingAuth && 
                 <Register 
                     createUser={createUser}
+                    msg={msg}
                 />             
             }            
         </>

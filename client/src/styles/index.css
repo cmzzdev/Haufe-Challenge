@@ -1,0 +1,146 @@
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  border-width: 0;
+  border-style: solid;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; 
+  color: #fff;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin: 0
+}
+
+a{
+  text-decoration: none;
+}
+
+.App{
+  min-height: 100vh;
+}
+
+
+@media (min-width: 1280px){
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 768px){
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 640px){
+  .container {
+    max-width: 640px;
+  }
+}
+
+.container{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #aeaeae;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #aeaeae;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #aeaeae;
+}
+
+input:focus, button:focus{
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.font-bold{
+  font-weight: bold;
+}
+
+.title{
+  text-align: center;
+  color: #A5E1E4;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn{
+  text-transform: uppercase;
+  padding: 1rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  border-radius: 0;
+  font-weight: bold;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid white;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.btn:before{
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.3;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.btn:hover:before {  
+  color: black;
+  transform: scaleY(1);
+  transform: scaleY(1);
+}

@@ -19,12 +19,12 @@ exports.createUserToken = async (req, res) => {
 
         let user = await User.findOne({email});
         if(!user){
-            return res.status(400).json({ errors: { msg: USER_DONT_EXIST }} )
+            return res.status(400).json({ msg: USER_DONT_EXIST })
         }
 
         const correcPassword = await bcrypjs.compare(password, user.password);
         if(!correcPassword){
-            return res.status(400).json({ errors: { msg: INVALID_PASSWORD }} )
+            return res.status(400).json({ msg: INVALID_PASSWORD })
         }
 
         const payload = {
@@ -42,7 +42,7 @@ exports.createUserToken = async (req, res) => {
         
     } catch (error) {
         console.log(error)
-        res.status(500).json({ errors: { msg: SERVER_ERROR }} )
+        res.status(500).json({ msg: SERVER_ERROR })
     }
 }
 
@@ -51,6 +51,6 @@ exports.getAuthUser = async (req, res) => {
         let user = await User.findById(req.user.id).select('-password');
         res.json({user});
     } catch (error) {
-        res.status(500).json({ errors: { msg: SERVER_ERROR }} )
+        res.status(500).json({ msg: SERVER_ERROR })
     }
 }

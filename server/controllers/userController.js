@@ -20,7 +20,7 @@ exports.createUser = async (req, res) => {
         let user = await User.findOne({email})
 
         if(user){
-            return res.status(400).json({ errors: { msg: USER_EXISTS} })
+            return res.status(400).json({ msg: USER_EXISTS})
         }
 
         user = new User(req.body);
@@ -44,7 +44,7 @@ exports.createUser = async (req, res) => {
         });  
         
     } catch (error) {
-        res.status(500).json({ errors: { msg: SERVER_ERROR }} )
+        res.status(500).json({ msg: SERVER_ERROR })
     }
 
 }

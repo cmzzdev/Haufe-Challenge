@@ -18,14 +18,14 @@ exports.createFavorite = async (req, res) => {
         const isFavorite = await Favorite.findOne({id: req.body.id, creator: req.user.id})        
 
         if(isFavorite){
-            return res.status(400).json({ errors: { msg: FAVORITE_EXIST }})
+            return res.status(400).json({ msg: FAVORITE_EXIST })
         }
 
         favorite.save();
         res.json(favorite)
 
     } catch (error) {
-        res.status(500).json({ errors: { msg: SERVER_ERROR }})
+        res.status(500).json({ msg: SERVER_ERROR })
     }    
 
 }
@@ -45,17 +45,17 @@ exports.deleteFavorite = async (req, res) => {
         let favorite = await Favorite.findById(req.params.id)    
         
         if(!favorite){
-            return res.status(404).json({errors: { msg: FAVORITE_NOT_FOUND }})
+            return res.status(404).json({ msg: FAVORITE_NOT_FOUND })
         }
         
         if(favorite.creator.toString() !== req.user.id ){
-            return res.status(401).json({errors: { msg: FAVORITE_UNAUTHORITZED }})
+            return res.status(401).json({ msg: FAVORITE_UNAUTHORITZED })
         }
 
         await Favorite.findOneAndRemove({ _id: req.params.id })
         res.json({msg: FAVORITE_DELETED })
 
     } catch (error) {
-        res.status(500).json({ errors: { msg: SERVER_ERROR }} )
+        res.status(500).json({ msg: SERVER_ERROR })
     }
 }

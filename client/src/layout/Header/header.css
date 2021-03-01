@@ -1,0 +1,46 @@
+header{    
+    padding: 1rem;  
+    background-color: #A5E1E4;
+}
+
+.brand{
+    flex-grow: 1;
+}
+
+.brand h1{
+    font-size: 1.5rem;
+}
+
+.salute{
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    height: 100%; 
+    align-items: center
+}
+
+.header-buttons{
+    display: inherit;
+}
+
+.header-buttons img{
+    width: 50px;
+    margin-right: .5rem;        
+}
+
+@media (max-width: 768px){ 
+    .header-buttons{
+        text-align: right;   
+        width: 100%;    
+    }
+    .salute{
+        flex: auto;
+    }
+    .brand{
+        display: none;   
+    }
+}

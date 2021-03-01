@@ -8,7 +8,7 @@ import store from './store';
 import tokenAuth from './config/token'
 import AuthState from 'context/auth/authState'
 
-import Header from 'layout/Header'
+import Header from 'layout/Header/Header'
 
 import LoginPage from 'pages/Login'
 import RegisterPage from 'pages/Register'
@@ -27,12 +27,14 @@ function App() {
         <div className="App">          
           <Router>  
             <Header />
-            <Switch>
-              <Route exact path="/" component={LoginPage} />
-              <Route exact path="/register" component={RegisterPage} />
-              <PrivateRoute exact patch="/list" component={ListPage} />
-              <PrivateRoute exact patch="/detail/:id" component={DetailPage} />
-            </Switch>
+            <div className="container">
+              <Switch>
+                <Route exact path="/" component={LoginPage} />
+                <Route exact path="/register" component={RegisterPage} />
+                <PrivateRoute exact patch="/list" component={ListPage} />
+                <PrivateRoute exact patch="/detail/:id" component={DetailPage} />
+              </Switch>
+            </div>
           </Router>
         </div>
       </AuthState>

@@ -17,7 +17,7 @@ exports.getCharacters = async (req, res) => {
                 characters = response.data;
             })
             .catch(err => {                
-                res.status(404).json({ errors: { msg: ERROR_EXTERNAL_API } })
+                res.status(404).json({ msg: ERROR_EXTERNAL_API })
             });
         
         let favorites = await Favorite.find({creator: req.user.id})
@@ -33,7 +33,7 @@ exports.getCharacters = async (req, res) => {
         res.json(characters);        
         
     } catch (error) {        
-        res.status(500).json({ errors: { msg: SERVER_ERROR }} )
+        res.status(500).json({ msg: SERVER_ERROR })
     }
 }
 
@@ -49,7 +49,7 @@ exports.getCharacterById = async (req, res) => {
                 character = response.data;
             })
             .catch(err => {                
-                res.status(404).json({ errors: { msg: ERROR_EXTERNAL_API } })
+                res.status(404).json({ msg: ERROR_EXTERNAL_API })
             });
         
         let isFavorite = await Favorite.findOne({creator: req.user.id, id: id})
@@ -61,7 +61,7 @@ exports.getCharacterById = async (req, res) => {
         res.json(character)
 
     } catch (error) {
-        res.status(500).json({ errors: { msg: SERVER_ERROR }} )
+        res.status(500).json({msg: SERVER_ERROR })
     }
 
 }

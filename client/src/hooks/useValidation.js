@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 const useValidation = (initialState, validateForm, fn) => {
 
     const [ values, setValues ] = useState(initialState)
-    const [ errors, setErrors ] = useState([])
+    const [ errors, setErrors ] = useState({})
     const [ submitForm, setSubmitForm ] = useState(false)
 
     useEffect(() => {
@@ -27,7 +27,8 @@ const useValidation = (initialState, validateForm, fn) => {
         setValues({
             ...values,
             [e.target.name] : e.target.value
-        })   
+        })  
+        setErrors({}) 
     }
 
     return{

@@ -1,5 +1,7 @@
 import React from 'react';
 import './login.css';
+import 'styles/form.css'
+import Alert from 'components/Alert'
 import useValidation from 'hooks/useValidation'
 import { validateLoginForm } from 'utils/validateForm'
 
@@ -8,7 +10,7 @@ const INITIAL_VALUES = {
     password: ''
 }
 
-const Login = ({initSession}) => {  
+const Login = ({initSession, msg}) => {  
 
     const submitForm = () => {
         console.log("handleSubmit")
@@ -26,19 +28,24 @@ const Login = ({initSession}) => {
 
     return ( 
         <div className="login-wrapper">
-            <div>
-                <div>                   
-
+            <h2 className="title">Login</h2>
+            { msg && (
+                <Alert msg={msg} />
+            )}
+            <div className="justify-form">           
+                <div className="form-content">                 
                     <form
+                        className="form"
                         onSubmit={handleSubmit}
                     >
-                        <div>
+                        <div className="field-content">
                             <label                            
                                 htmlFor="email"
                             >
                                 Email
                             </label>   
                             <input
+                                className="input-field"
                                 type="email"
                                 id="email"
                                 name="email"
@@ -48,21 +55,22 @@ const Login = ({initSession}) => {
                             /> 
                             {
                                 errors.email ? (
-                                    <div>
-                                        <p>Error</p>
+                                    <div className="error-content">
+                                        <p className="font-bold">Error</p>
                                         <p>{errors.email}</p>
                                     </div> 
                                 ) : null
                             }
                         </div>
 
-                        <div>
+                        <div className="field-content">
                             <label                            
                                 htmlFor="password"
                             >
                                 Password
                             </label>   
                             <input
+                                className="input-field"
                                 type="password"
                                 id="password"
                                 name="password"
@@ -72,17 +80,20 @@ const Login = ({initSession}) => {
                             /> 
                             {
                                 errors.password ? (
-                                    <div>
-                                        <p>Error</p>
+                                    <div className="error-content">
+                                        <p className="font-bold">Error</p>
                                         <p>{errors.password}</p>
                                     </div> 
                                 ) : null
                             }
                         </div>
-
-                        <input
-                            type="submit"
-                        />
+                        
+                        <div className="text-center">
+                            <button
+                                type="submit"
+                                className="btn"                            
+                            >Submit</button>
+                        </div>
 
                     </form>
                 </div>

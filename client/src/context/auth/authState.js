@@ -9,7 +9,8 @@ import {
     LOGIN_ERROR,
     USER_AUTH,
     CLOSE_SESSION,
-    IS_LOADING_USER
+    IS_LOADING_USER,
+    CLEAN_ALERT
 } from 'types'
 
 import axiosClient from 'config/axios'
@@ -33,7 +34,7 @@ const AuthState= ({children}) => {
             const res = await axiosClient.post("/api/user", data)
             dispatch({
                 type: CREATE_USER_SUCCESS,
-                payload: res.data.msg
+                payload: res.data
             })            
             initSession(data)
         } catch (error) {           
@@ -41,7 +42,14 @@ const AuthState= ({children}) => {
                 type: CREATE_USER_ERROR,
                 payload: error.response.data.msg
             })
-        }  
+        } 
+        
+        setTimeout(() => {
+            dispatch({
+                type: CLEAN_ALERT
+            })
+        }, 3000)
+        
     }
 
     // Login
@@ -58,7 +66,13 @@ const AuthState= ({children}) => {
                 type: LOGIN_ERROR,
                 payload: error.response.data.msg
             })
-        }        
+        }     
+
+        setTimeout(() => {
+            dispatch({
+                type: CLEAN_ALERT
+            })
+        }, 3000)
     }
 
     // Auth User 
