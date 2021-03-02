@@ -4,6 +4,7 @@
   --bg-color: #E9F7F8;
   --text-color: #53C6CC;  
   --secondary-text-color: #fff;
+  --placeholder-color: #aeaeae;
 }
 
 html {
@@ -71,17 +72,18 @@ a{
   margin-right: auto;
 }
 
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #aeaeae;
+  color: var(--placeholder-color);
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #aeaeae;
+  color: var(--placeholder-color)
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: #aeaeae;
+  color: var(--placeholder-color)
 }
 
 input:focus, button:focus{
@@ -112,10 +114,10 @@ input:focus, button:focus{
   padding-bottom: .75rem;
   border-radius: 0;
   font-weight: bold;
-  color: #fff;
+  color: var(--secondary-text-color);
   background-color: transparent;
   cursor: pointer;
-  border: 1px solid white;
+  border: 1px solid var(--secondary-text-color);
   -webkit-transition: color 300ms;
   transition: color 300ms;
   position: relative;
@@ -149,4 +151,15 @@ input:focus, button:focus{
   color: black;
   transform: scaleY(1);
   transform: scaleY(1);
+}
+
+.btn-fav{
+    background: rgba(255, 172, 172, .3);
+    border: 0;
+    border-radius: 100px;   
+    width: 35px;
+    height: 35px;
+    position: absolute;    
+    top: 12px;
+    right: 12px;
 }

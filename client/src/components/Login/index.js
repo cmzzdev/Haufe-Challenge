@@ -12,8 +12,7 @@ const INITIAL_VALUES = {
 
 const Login = ({initSession, msg}) => {  
 
-    const submitForm = () => {
-        console.log("handleSubmit")
+    const submitForm = () => {       
         initSession({email,password})
     }
 

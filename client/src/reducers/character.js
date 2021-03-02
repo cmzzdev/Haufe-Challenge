@@ -18,16 +18,17 @@ const characterReducer = (state = initialState, action) =>  {
     const { type, payload } = action
 
     switch (type) {
-        case GET_CHARACTERS:
+        case GET_CHARACTERS:           
             return{
                 ...state,
                 characters: state.characters.concat(payload.results),
-                loading:false
+                loading: false
             }           
-        case GET_CHARACTER:
+        case GET_CHARACTER:           
             return{
                 ...state,
-                character: payload,
+                characters: [],
+                character: payload,                
                 loading: false
             }
         case GET_CHARACTERS_ERROR:
@@ -37,11 +38,11 @@ const characterReducer = (state = initialState, action) =>  {
                 msg: payload,
                 loading: false
             }
-        case CLEAN_CHARACTERS:
-            console.log("entra CLEAN_CHARACTERS")
+        case CLEAN_CHARACTERS:                   
             return{
                 ...state,
-                state: initialState
+                characters: [],
+                character: {}
             }               
         default:
             return state

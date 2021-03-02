@@ -1,18 +1,23 @@
 import React from 'react';
 import './list.css'
 import Card from 'components/Card'
+import Alert from 'components/Alert'
 
-const CharactersList = ({characters}) => {
+const CharactersList = ({characters, msg}) => {
     return ( 
         <>
             <h1 className="title">List Of Characters</h1>  
-            <div className="characters-list">
+            { msg && (
+                <Alert msg={msg} />
+            )}
+
+            <div className="characters-list">               
                 {
                     characters && (     
                         characters.map(character => (
                             <Card 
                                 key={character.id} 
-                                character={character} 
+                                character={character}                                
                             />
                         ))
                     )

@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import Login from 'components/Login'
 import authContext from 'context/auth/authContext'
+
 
 const LoginPage = () => {
     
@@ -9,12 +10,15 @@ const LoginPage = () => {
     const { auth, isLoadingAuth, initSession, msg } = AuthContext
 
     const history = useHistory();
+    const location = useLocation();   
+
     
-    useEffect(() => {
-        if(auth){
+    useEffect(() => {     
+        if(auth && location.pathname === '/' ){
             history.push('/list')
         }
-    })   
+    })
+       
 
     return ( 
         <>          

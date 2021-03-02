@@ -1,7 +1,6 @@
 .card {
-
-    border: 0px solid aqua;
     margin: 0.5rem;
+    margin-bottom: 100px;
     position: relative;
     height: 20rem;
     overflow: hidden;
@@ -71,7 +70,7 @@
     .card-details{
         max-height: 0rem;
         opacity: 0;
-        transition: max-height 1.5s ease, opacity 1s ease;
+        transition: max-height 1.5s ease;
         display: flex;
         span{
             display: block;
@@ -104,5 +103,5 @@
             transform: scale(1.2);
             z-index: -1;
         }
-    }
+    }     
 }

@@ -10,8 +10,7 @@ import {
     USER_AUTH,
     CLOSE_SESSION,
     IS_LOADING_USER,
-    CLEAN_ALERT,
-    CLEAN_CHARACTERS
+    CLEAN_ALERT
 } from 'types'
 
 import axiosClient from 'config/axios'

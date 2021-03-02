@@ -30,9 +30,9 @@ function App() {
             <div className="container">
               <Switch>
                 <Route exact path="/" component={LoginPage} />
-                <Route exact path="/register" component={RegisterPage} />
-                <PrivateRoute exact patch="/list" component={ListPage} />
-                <PrivateRoute exact patch="/detail/:id" component={DetailPage} />
+                <Route exact path="/register" component={RegisterPage} />                
+                <Route exact path="/list" component={ListPage} />    
+                <Route path="/detail/:id" component={DetailPage} />            
               </Switch>
             </div>
           </Router>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
-
+import { cleanCharacters } from 'actions/character'
 import { Link, useLocation, useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import authContext from 'context/auth/authContext'
 
 import './header.css'
@@ -10,7 +11,9 @@ const Header = () => {
 
     const AuthContext = useContext(authContext)
     const { user, authUser, auth, closeSession } = AuthContext
-     const history = useHistory();
+    const history = useHistory();
+    const location = useLocation();   
+    const dispatch = useDispatch();
 
     useEffect(() => {  
         const token = localStorage.getItem('token'); 
@@ -18,22 +21,28 @@ const Header = () => {
             authUser()
         }  
         // eslint-disable-next-line
-    }, []); 
+    }, [auth]);        
 
-    const location = useLocation();
-   
+    const goToLoginPage = () => {
+        history.push('/')   
+    }
 
     const handleClick = e => {
         e.preventDefault()
-        closeSession();        
-        //history.push('/')        
+        closeSession()      
+        dispatch(cleanCharacters())
+        goToLoginPage()           
     }
 
     return ( 
         <header>
             <div className="row">
                 <div className="brand">
-                    <h1>Haufe Challenge</h1>
+                    <Link
+                        to="/"
+                    >
+                        <h1>Haufe Challenge</h1>
+                    </Link>
                 </div>
                 <div className="header-buttons">
                     { user && authUser ? (

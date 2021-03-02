@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import Register from 'components/Register'
 import authContext from 'context/auth/authContext'
 
@@ -9,12 +9,14 @@ const RegisterPage = () => {
     const { auth, isLoadingAuth, createUser, msg } = AuthContext
 
     const history = useHistory();
-    
-    useEffect(() => {
-        if(auth){
+    const location = useLocation();    
+    /*
+    useEffect(() => {     
+        if(auth && location.pathname === '/register' ){
             history.push('/list')
         }
-    })        
+    })
+    */   
 
     return ( 
         <> 
