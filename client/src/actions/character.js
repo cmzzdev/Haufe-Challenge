@@ -5,7 +5,8 @@ import {
     GET_CHARACTER,
     GET_CHARACTER_ERROR,
     CLEAN_CHARACTERS,
-    CLEAN_ALERT
+    CLEAN_ALERT,
+    LOAD_CHARACTER
 } from 'types'
 
 export const getCharacters = page => {
@@ -32,6 +33,7 @@ export const getCharacters = page => {
 
 export const getCharacterById = id => {    
     return async (dispatch) => {
+        dispatch(loadCharacter())
         try{
             const res = await axiosClient.get(`/api/character/${id}`)
             dispatch({
@@ -52,7 +54,6 @@ export const getCharacterById = id => {
     }
 }
 
-
 export const cleanCharacters = () => {
     return async (dispatch) => {
         dispatch({
@@ -60,3 +61,8 @@ export const cleanCharacters = () => {
         })       
     }   
 }
+
+export const loadCharacter = () =>({
+    type: LOAD_CHARACTER,
+    payload: true
+})

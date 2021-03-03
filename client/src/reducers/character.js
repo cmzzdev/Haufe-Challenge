@@ -3,7 +3,9 @@ import {
     GET_CHARACTERS_ERROR,
     GET_CHARACTER,
     GET_CHARACTER_ERROR,
-    CLEAN_CHARACTERS
+    CLEAN_CHARACTERS,
+    CLEAN_ALERT,
+    LOAD_CHARACTER
 } from 'types'
 
 const initialState = {
@@ -18,10 +20,15 @@ const characterReducer = (state = initialState, action) =>  {
     const { type, payload } = action
 
     switch (type) {
+        case LOAD_CHARACTER:
+            return{
+                ...state,
+                loading: action.payload
+            }
         case GET_CHARACTERS:           
             return{
                 ...state,
-                characters: state.characters.concat(payload.results),
+                characters: state.characters.concat(payload.results),                
                 loading: false
             }           
         case GET_CHARACTER:           
@@ -43,7 +50,12 @@ const characterReducer = (state = initialState, action) =>  {
                 ...state,
                 characters: [],
                 character: {}
-            }               
+            } 
+        case CLEAN_ALERT:
+            return{
+                ...state,
+                msg: null
+            }              
         default:
             return state
     }

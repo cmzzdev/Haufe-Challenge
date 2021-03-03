@@ -1,10 +1,15 @@
 
 :root{
-  --main-color: #A5E1E4;
-  --bg-color: #E9F7F8;
-  --text-color: #53C6CC;  
+  --main-color: #588183;
+  --bg-color: #DDE2E3;
+  --detail-bg-color: #B5C7C8;
+  --text-color: #7C9799;    
   --secondary-text-color: #fff;
+  --terciary-text-color: #B5C7C8;
   --placeholder-color: #aeaeae;
+  --alive: green;
+  --dead: red;
+  --unknow: yellow;
 }
 
 html {
@@ -36,6 +41,11 @@ h1, h2, h3, h4, h5, h6{
 
 a{
   text-decoration: none;
+  color: var(--main-color)
+}
+
+a:hover, a:focus, a:active{
+  color: var(--main-color)
 }
 
 .App{
@@ -70,6 +80,7 @@ a{
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding: 1rem;
 }
 
 
@@ -107,7 +118,7 @@ input:focus, button:focus{
   margin-bottom: 3rem;
 }
 
-.btn{
+.btn, .btn-detail{
   text-transform: uppercase;
   padding: 1rem;
   padding-top: .75rem;
@@ -127,7 +138,7 @@ input:focus, button:focus{
   backface-visibility: hidden;
 }
 
-.btn:before{
+.btn:before, .btn-detail:before{
   content: " ";
   position: absolute;
   z-index: -1;
@@ -153,6 +164,22 @@ input:focus, button:focus{
   transform: scaleY(1);
 }
 
+.btn-detail:hover:before{
+  color: var(--main-color);
+  transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+.btn-detail{
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  font-size: .9rem;
+}
+
+.btn-detail:hover{
+  color: #fff
+}
+
 .btn-fav{
     background: rgba(255, 172, 172, .3);
     border: 0;
@@ -162,4 +189,31 @@ input:focus, button:focus{
     position: absolute;    
     top: 12px;
     right: 12px;
+}
+
+.alive{
+  color: var(--alive);  
+  display: inline-block;
+}
+
+.dead{
+  color: var(--dead);  
+  display: inline-block;
+}
+
+.unknown{
+  color: var(--unknow); 
+  display: inline-block; 
+}
+
+.bg-alive{
+  background-color: var(--alive);
+}
+
+.bg-dead{
+  background-color: var(--dead);
+}
+
+.bg-unknown{
+  background-color: var(--unknow);
 }

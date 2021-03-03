@@ -1,5 +1,5 @@
 import React from 'react';
-import './login.css';
+import './login.scss';
 import 'styles/form.css'
 import Alert from 'components/Alert'
 import useValidation from 'hooks/useValidation'
@@ -27,7 +27,7 @@ const Login = ({initSession, msg}) => {
 
     return ( 
         <div className="login-wrapper">
-            <h2 className="title">Login</h2>
+            <h1 className="title">Login</h1>
             { msg && (
                 <Alert msg={msg} />
             )}

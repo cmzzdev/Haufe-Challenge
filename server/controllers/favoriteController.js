@@ -2,6 +2,27 @@ const Favorite = require('../models/Favorite');
 const { validationResult } = require('express-validator');
 const { SERVER_ERROR, FAVORITE_EXIST, FAVORITE_NOT_FOUND, FAVORITE_UNAUTHORITZED, FAVORITE_DELETED } = require('../config/messages');
 
+exports.getFavorite = async (req, res) => {
+
+    try {
+
+        let favorite = {}
+        const { id } = req.params;
+
+        favorite = await Favorite.findOne({creator: req.user.id, id: id})
+
+        if(!favorite){
+            res.json({})
+        }
+
+        res.json(favorite)
+        
+    } catch (error) {
+        res.status(500).json({ msg: SERVER_ERROR })
+    }
+
+}
+
 exports.createFavorite = async (req, res) => {
 
     const errors = validationResult(req);

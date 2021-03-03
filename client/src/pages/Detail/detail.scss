@@ -1,6 +1,14 @@
-.detail-content{
-    span{
-        display: block;
-    }
+.detail-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 615px;
+    margin: auto;
 }
 
+.back-content{
+    margin-right: 10rem;
+    @media (max-width: 767px){
+        margin-right: 1rem;
+    } 
+}

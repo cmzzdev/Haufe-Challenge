@@ -14,6 +14,7 @@ import LoginPage from 'pages/Login'
 import RegisterPage from 'pages/Register'
 import ListPage from 'pages/List'
 import DetailPage from 'pages/Detail'
+import ErrorPage404 from 'pages/ErrorPage404'
 
 const token = localStorage.getItem('token');
 if(token){
@@ -32,7 +33,8 @@ function App() {
                 <Route exact path="/" component={LoginPage} />
                 <Route exact path="/register" component={RegisterPage} />                
                 <Route exact path="/list" component={ListPage} />    
-                <Route path="/detail/:id" component={DetailPage} />            
+                <Route path="/detail/:id" component={DetailPage} />   
+                <Route component={ErrorPage404} />                  
               </Switch>
             </div>
           </Router>

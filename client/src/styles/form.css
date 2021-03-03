@@ -1,9 +1,7 @@
 .form-content{
-    width: 100%;
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
+    width: 100%;    
     max-width: 32rem;
-    background-color: #A5E1E4;
+    background-color: var(--main-color);
 }
 
 .justify-form{
@@ -52,11 +50,4 @@ label{
     border-color: #c53025;
     --border-opacity: 1;
     background-color: #E9F7F8;
-}
-
-@media (max-width: 768px){ 
-    .form-content{
-        margin-top: 0;
-        margin-bottom: 0;
-    }
 }

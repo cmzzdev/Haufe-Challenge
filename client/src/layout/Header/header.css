@@ -1,6 +1,6 @@
 header{    
     padding: 1rem;  
-    background-color: #A5E1E4;
+    background-color: var(--main-color);
 }
 
 .brand{

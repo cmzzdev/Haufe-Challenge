@@ -1,5 +1,5 @@
 import React from 'react';
-import './list.css'
+import './list.scss'
 import Card from 'components/Card'
 import Alert from 'components/Alert'
 

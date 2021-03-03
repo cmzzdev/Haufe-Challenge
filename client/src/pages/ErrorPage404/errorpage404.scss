@@ -1,0 +1,12 @@
+.img404-content{
+    text-align: center;
+    img{
+        max-width: 600px;
+        @media (max-width: 767px){
+            max-width: 100%;
+        }  
+    }
+    .btn-back{
+        margin-top: 2rem;
+    }
+}

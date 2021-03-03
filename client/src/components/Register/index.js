@@ -1,5 +1,5 @@
 import React from 'react'
-import './register.css'
+import './register.scss'
 import 'styles/form.css'
 import Alert from 'components/Alert'
 import useValidation from 'hooks/useValidation'
@@ -28,7 +28,7 @@ const Register = ({createUser, msg}) => {
 
     return ( 
         <div className="register-wrapper">     
-            <h2 className="title">Register</h2>       
+            <h1 className="title">Register</h1>       
             { msg && (
                 <Alert msg={msg} />
             )}

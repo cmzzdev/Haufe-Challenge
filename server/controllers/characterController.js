@@ -55,7 +55,7 @@ exports.getCharacterById = async (req, res) => {
         let isFavorite = await Favorite.findOne({creator: req.user.id, id: id})
         
         if(isFavorite){
-            character.favorite = true
+            character.favorite = true           
         }
 
         res.json(character)

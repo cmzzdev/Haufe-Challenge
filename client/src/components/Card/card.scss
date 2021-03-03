@@ -1,6 +1,6 @@
 .card {
     margin: 0.5rem;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     position: relative;
     height: 20rem;
     overflow: hidden;
@@ -36,7 +36,7 @@
         backface-visibility: hidden;
         position: relative;
         z-index: -1;
-    }
+    }    
 
     .card-link{
         position: absolute;
@@ -71,10 +71,10 @@
         max-height: 0rem;
         opacity: 0;
         transition: max-height 1.5s ease;
-        display: flex;
-        span{
+        display: flex;    
+        .sp{
             display: block;
-        }
+        }    
         .btn-content{
             flex-grow: 1;
             text-align: right;
@@ -86,7 +86,7 @@
                 }
             }
         }
-    }    
+    } 
 
     &:hover{
         .card-details{

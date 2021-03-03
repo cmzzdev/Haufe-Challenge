@@ -9,6 +9,7 @@ const Card = ({character}) => {
     const { id, name, image, created, status, species, gender, favorite } = character
 
     let isFavorite = favorite ? "❤️" : '';  
+
     return ( 
         <div 
             className="card"             
@@ -37,9 +38,9 @@ const Card = ({character}) => {
                 </div>
                 <div className="card-details">
                     <div>
-                        <span>Status: {status}</span>
-                        <span>Species: {species}</span>
-                        <span>Gender: {gender}</span>
+                        <span className='sp'>Status: <span className={status.toLowerCase()}>{status}</span></span> 
+                        <span className='sp'>Species: {species}</span>
+                        <span className='sp'>Gender: {gender}</span>
                     </div>
                     <div className="btn-content">                                                
                         <Link to={`/detail/${id}`}>
