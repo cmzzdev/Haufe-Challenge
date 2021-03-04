@@ -6,17 +6,16 @@ import authContext from 'context/auth/authContext'
 const RegisterPage = () => {
     
     const AuthContext = useContext(authContext)
-    const { auth, isLoadingAuth, createUser, msg } = AuthContext
+    const { isLoadingAuth, createUser, msg, auth } = AuthContext 
 
     const history = useHistory();
-    const location = useLocation();    
-    /*
+    const location = useLocation();   
+
     useEffect(() => {     
         if(auth && location.pathname === '/register' ){
             history.push('/list')
         }
     })
-    */   
 
     return ( 
         <> 

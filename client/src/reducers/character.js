@@ -43,13 +43,14 @@ const characterReducer = (state = initialState, action) =>  {
             return{
                 ...state,
                 msg: payload,
-                loading: false
+                loading: false               
             }
         case CLEAN_CHARACTERS:                   
             return{
                 ...state,
                 characters: [],
-                character: {}
+                character: {},
+                msg: null
             } 
         case CLEAN_ALERT:
             return{

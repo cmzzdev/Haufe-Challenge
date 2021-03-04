@@ -1,5 +1,4 @@
 import React, { useEffect, useCallback, useRef } from 'react'
-import Spinner from 'components/Spinner'
 import CharactersList from 'components/CharactersList'
 import useCharacters from 'hooks/useCharacters'
 import useNearScreen from 'hooks/useNearScreen'
@@ -25,16 +24,11 @@ const ListPage = () => {
     }, [debounceHandleNextPage, isNearScreen])
 
     return ( 
-        <>
-            { loading 
-              ? <Spinner />
-              :(                
-                <CharactersList 
-                    characters={characters}
-                    msg={msg}                   
-                />
-              )              
-            }
+        <>              
+            <CharactersList 
+                characters={characters}
+                msg={msg}                   
+            />           
             <div id="visor" ref={externalRef}></div>    
         </>
     );

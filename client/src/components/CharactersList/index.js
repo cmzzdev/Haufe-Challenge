@@ -3,7 +3,7 @@ import './list.scss'
 import Card from 'components/Card'
 import Alert from 'components/Alert'
 
-const CharactersList = ({characters, msg}) => {
+const CharactersList = ({characters, msg }) => {
     return ( 
         <>
             <h1 className="title">List Of Characters</h1>  

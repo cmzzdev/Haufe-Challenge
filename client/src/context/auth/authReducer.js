@@ -13,7 +13,11 @@ import {
 const authReducer = (state, action) =>  {
 
     switch(action.type){
-        case CREATE_USER_SUCCESS:
+        case CREATE_USER_SUCCESS:  
+            return{
+                ...state,
+                msg: null
+            }       
         case CREATE_USER_ERROR:
         case LOGIN_ERROR:
             return{

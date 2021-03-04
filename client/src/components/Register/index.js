@@ -28,10 +28,12 @@ const Register = ({createUser, msg}) => {
 
     return ( 
         <div className="register-wrapper">     
-            <h1 className="title">Register</h1>       
+            <h1 className="title">Register</h1>     
+              
             { msg && (
                 <Alert msg={msg} />
             )}
+
             <div className="justify-form">
                 <div className="form-content">                   
                     <form

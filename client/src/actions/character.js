@@ -11,6 +11,7 @@ import {
 
 export const getCharacters = page => {
     return async (dispatch) => {
+        dispatch(loadCharacter())
         try {        
             const res = await axiosClient.get(`/api/character/list/${page}`)
             dispatch({

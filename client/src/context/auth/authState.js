@@ -29,7 +29,7 @@ const AuthState= ({children}) => {
     const [ state, dispatch ] = useReducer(authReducer, initialState)
 
     // Create User
-    const createUser = async data => {
+    const createUser = async data => {        
         try {
             const res = await axiosClient.post("/api/user", data)
             dispatch({
@@ -42,8 +42,7 @@ const AuthState= ({children}) => {
                 type: CREATE_USER_ERROR,
                 payload: error.response.data.msg
             })
-        } 
-        
+        }         
         setTimeout(() => {
             dispatch({
                 type: CLEAN_ALERT

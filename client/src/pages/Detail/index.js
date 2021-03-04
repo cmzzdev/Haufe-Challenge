@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
+import { Redirect } from 'react-router-dom'
 import InfoDetail from 'components/InfoDetail'
 import { getCharacterById } from 'actions/character'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
+import Spinner from 'components/Spinner'
+
 import './detail.scss'
 
 const DetailPage = () => {
@@ -16,10 +19,11 @@ const DetailPage = () => {
     }, [dispatch, id]);     
 
     const character = useSelector(state => state.characters.character)   
-    const loading = useSelector(state => state.characters.loading)   
+    const loading = useSelector(state => state.characters.loading)      
+    const msg = useSelector(state => state.characters.msg)    
 
     return ( 
-        <>
+        <>           
             <div className="detail-header">
                 <div className='back-content'>
                     <Link to='/list'>
@@ -34,23 +38,22 @@ const DetailPage = () => {
                     <h1 className="title">Detail Page</h1> 
                 </div>
             </div>
-             
-
-            <div className="detail-content"> 
-
-                { loading ? (
-
-                    <p>Loading...</p>
-
-                ) : (      
-                    
-                    <InfoDetail 
-                        character={character}                        
-                    />                    
-                )}
-                                
-            </div>
-
+            
+            { loading ? (
+                    <Spinner />
+                ) : (  
+                    msg 
+                    ? 
+                    ( <Redirect to="/Error404" /> ) 
+                    : (
+                        <div className="detail-content"> 
+                            <InfoDetail 
+                                character={character}    
+                                loading={loading}                    
+                            />    
+                        </div>                
+                    )
+            )}
         </>
     );
 }

@@ -15,13 +15,14 @@ const Header = () => {
     const location = useLocation();   
     const dispatch = useDispatch();
 
+    
     useEffect(() => {  
         const token = localStorage.getItem('token'); 
         if(token){
             authUser()
         }  
         // eslint-disable-next-line
-    }, [auth]);        
+    }, [auth]);   
 
     const goToLoginPage = () => {
         history.push('/')   
@@ -62,14 +63,16 @@ const Header = () => {
                         <>
                             { location.pathname === '/register' ? (
                                 <Link 
-                                    to='/'
-                                    className="btn"
-                                >Login</Link>
+                                    to='/'                                    
+                                >
+                                    <button className="btn">Login</button>
+                                </Link>
                             ) : (
                                 <Link 
-                                    to='/register'
-                                    className="btn"
-                                >Sign Up</Link>
+                                    to='/register'                                    
+                                >
+                                    <button className="btn">Sign Up</button>
+                                </Link>
                             )}                        
                         </>
                     )}                
