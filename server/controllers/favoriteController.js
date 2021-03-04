@@ -10,11 +10,11 @@ exports.getFavorite = async (req, res) => {
         const { id } = req.params;
 
         favorite = await Favorite.findOne({creator: req.user.id, id: id})
-
+        
         if(!favorite){
-            res.json({})
+            return res.json({})
         }
-
+        
         res.json(favorite)
         
     } catch (error) {

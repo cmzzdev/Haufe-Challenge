@@ -11,7 +11,7 @@ const CharactersList = ({characters, msg }) => {
                 <Alert msg={msg} />
             )}
 
-            <div className="characters-list">               
+            <div className="characters-list" data-testid="characters-list">               
                 {
                     characters && (     
                         characters.map(character => (

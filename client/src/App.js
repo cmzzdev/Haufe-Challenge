@@ -32,8 +32,8 @@ function App() {
               <Switch>
                 <Route exact path="/" component={LoginPage} />
                 <Route exact path="/register" component={RegisterPage} />                
-                <Route exact path="/list" component={ListPage} />    
-                <Route path="/detail/:id" component={DetailPage} />   
+                <PrivateRoute exact path="/list" component={ListPage} />    
+                <PrivateRoute path="/detail/:id" component={DetailPage} />   
                 <Route component={ErrorPage404} />                  
               </Switch>
             </div>

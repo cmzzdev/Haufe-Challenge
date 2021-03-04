@@ -12,11 +12,12 @@ const Card = ({character}) => {
 
     return ( 
         <div 
-            className="card"             
+            className="card"   
+            data-testid="card"                    
         >
             <span className="card-link"></span>
                        
-            <img src={image} alt={name} />
+            <img src={image} alt={name} data-testid="card-image"/>
             { isFavorite && (
                 <button className="btn-fav">
                     <span aria-label="fav" role="img">
@@ -25,7 +26,7 @@ const Card = ({character}) => {
                 </button>
             )} 
             <div className="text-wrapper">
-                <h3 className="card-title">
+                <h3 className="card-title" data-testid="card-title">
                     {name} 
                 </h3>
                 <div className="created">
@@ -40,12 +41,13 @@ const Card = ({character}) => {
                     <div>
                         <span className='sp'>Status: <span className={status.toLowerCase()}>{status}</span></span> 
                         <span className='sp'>Species: {species}</span>
-                        <span className='sp'>Gender: {gender}</span>
+                        <span className='sp' data-testid="card-gender">Gender: {gender}</span>
                     </div>
                     <div className="btn-content">                                                
                         <Link to={`/detail/${id}`}>
                             <button 
-                                className="btn"                                                      
+                                className="btn"  
+                                data-testid="btn-read-more"                                                    
                             >                    
                                 Read more
                             </button>

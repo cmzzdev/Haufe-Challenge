@@ -56,7 +56,7 @@ exports.getCharacterById = async (req, res) => {
         
         if(isFavorite){
             character.favorite = true           
-        }
+        }        
 
         res.json(character)
 
