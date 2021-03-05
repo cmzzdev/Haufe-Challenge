@@ -1,4 +1,4 @@
-# Haufe-Challenge - Carles Martínez Zarza
+# Haufe-Challenge - Carles 
 
 ## Clone the repository to your local machine 📖
 
