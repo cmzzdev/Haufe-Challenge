@@ -7,9 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const InfoDetail = ({character, loading}) => {    
 
-    const { id, name, created, gender, species, status, image, url, origin, location, episode } = character  
-
-    //<Redirect to="/Error404" />
+    const { id, name, created, gender, species, status, image, url, origin, location, episode } = character      
     
     const dispatch = useDispatch()     
 

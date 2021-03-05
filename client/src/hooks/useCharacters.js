@@ -4,20 +4,17 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const INITIAL_PAGE = 1
 
-const useCharacters = () => {
+const useCharacters = () => {    
     
-    //const [ loading, setLoading ] = useState(false) 
     const [ loadingNextPage, setLoadingNextPage ] = useState(false)
     const [ page, setPage ] = useState(INITIAL_PAGE)
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if(!loadingNextPage){                  
-            //setLoading(true);            
+        if(!loadingNextPage){    
             const loadCharacters = page => {
-                dispatch(getCharacters(page))                
-                //setLoading(false);
+                dispatch(getCharacters(page))     
                 setLoadingNextPage(true)
             }          
             loadCharacters(page)
@@ -25,11 +22,9 @@ const useCharacters = () => {
     }, [dispatch, loadingNextPage, page])    
 
     useEffect(() => {
-        if (page === INITIAL_PAGE) return         
-        //setLoading(true);                          
+        if (page === INITIAL_PAGE) return       
         const loadNextCharacters = page => {
-            dispatch(getCharacters(page))
-            //setLoading(false);
+            dispatch(getCharacters(page))            
         }          
         loadNextCharacters(page)                    
     }, [dispatch, page])
