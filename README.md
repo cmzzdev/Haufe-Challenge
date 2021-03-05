@@ -38,6 +38,7 @@ http://localhost:3000
 * React
 * Redux
 * Hooks
+* Custom Hooks
 * Stateless functional components
 * Node
 * Mongo
