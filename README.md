@@ -44,6 +44,7 @@ http://localhost:3000
 * Mongo
 * ES6
 * Sass
+* CSS
 
 ## App workflow 📦
 
