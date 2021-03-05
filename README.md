@@ -2,7 +2,7 @@
 
 ## Clone the repository to your local machine 📖
 
-_open console terminal and write the follow command_
+_Open console terminal and write the follow command_
 
 ```
 git clone https://github.com/cmzzdev/Haufe-Challenge.git
