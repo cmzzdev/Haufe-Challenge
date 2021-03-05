@@ -34,7 +34,8 @@ _If the browser has not been opened, need to enter your browser and enter the fo
 http://localhost:3000
 ```
 
-## Backend dependecies ⚙️
+## Backend dependencies ⚙️
+
 * **axios:** Make requests to external API
 * **bcryptjs:** Hash password user by SALT phrase and compare them
 * **cors:** Enable CORS middleware
@@ -44,7 +45,20 @@ http://localhost:3000
 * **mongoose:** ODM to use with MongoDB
 * **nodemon:** Auto restart node app when files changes
 
+## Frontend dependencies
+
+* **axios:** Make request to our Backend
+* **intersection-observer:** For our lazy-load. Polyfill for unsupporting browsers. Observe if one element is visible for the user
+* **just-debounce-it:** Should only happen after a repeated action has completed.
+* **moment:** Format Dates
+* **node-sass:** Using scss files
+* **react-router-dom:** Dynamic routing
+* **redux:** Using redux
+* **redux-thunk:** Thunk middleware for Redux
+* **testing library:** Test the app
+
 ## App developed with 📋 
+
 * React
 * Redux
 * Hooks
