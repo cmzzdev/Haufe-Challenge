@@ -41,6 +41,7 @@ http://localhost:3000
 * Custom Hooks
 * Stateless functional components
 * Node
+* Express
 * Mongo
 * ES6
 * Sass
