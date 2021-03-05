@@ -38,7 +38,7 @@ http://localhost:3000
 
 Non-relational database used is MongoDB. Used **MongoDB Atlas** account based on cloud. I've url serv to attack them. If you want to see the archicture of that, I can share my screen to show you MongoDB Compass UI or MongoDB Atlas account profile.
 
-In the root of the repository I have put a collection of **POSTMAN,** you import them to your postman and test the different request to the API
+In the root of the repository I have put a collection of **POSTMAN,** you can import them to your postman and test the different request to the API
 
 ```
 Haufe Rick Morty.postman_collection
