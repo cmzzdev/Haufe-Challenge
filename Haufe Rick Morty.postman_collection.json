@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "f2b8dd11-c731-455e-9b07-27e04895f99a",
+		"name": "Haufe Rick Morty",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Create token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"carles@correo.com\",   \r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "haufe-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAzYTMzODViNWU5YjUxZWY0Yzk3NzMzIn0sImlhdCI6MTYxNDQ0NzQyOSwiZXhwIjoxNjE0NjIwMjI5fQ.Wx1EsQ_fu8v_wzNYzv2OI_Dr2jR8w7itaM0CCZ6P3JU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Carles\",\r\n    \"email\": \"carles@correo.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Character",
+			"item": [
+				{
+					"name": "Get characters by page",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "haufe-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAzYTMzODViNWU5YjUxZWY0Yzk3NzMzIn0sImlhdCI6MTYxNDQ0NzQyOSwiZXhwIjoxNjE0NjIwMjI5fQ.Wx1EsQ_fu8v_wzNYzv2OI_Dr2jR8w7itaM0CCZ6P3JU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/character/list/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"character",
+								"list",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single character",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "haufe-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAzYTMzMzZiNWU5YjUxZWY0Yzk3NzMyIn0sImlhdCI6MTYxNDQyNzg4OSwiZXhwIjoxNjE0NjAwNjg5fQ.6VeNl4bi3LotxbVnjx--nQHQqG1AU67mZLDijCEETmI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/character/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"character",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorite",
+			"item": [
+				{
+					"name": "Create favorite",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "haufe-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAzYTMzODViNWU5YjUxZWY0Yzk3NzMzIn0sImlhdCI6MTYxNDQ0NzQyOSwiZXhwIjoxNjE0NjIwMjI5fQ.Wx1EsQ_fu8v_wzNYzv2OI_Dr2jR8w7itaM0CCZ6P3JU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/favorite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete favorite",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "haufe-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAzYTMzMzZiNWU5YjUxZWY0Yzk3NzMyIn0sImlhdCI6MTYxNDQ0MjAwNywiZXhwIjoxNjE0NjE0ODA3fQ.MrkWHpZbGT9OIEQepU6L_VhWW_t9jjZyPwR-oP-ks9I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/favorite/603a7598acba0b0accada843",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"favorite",
+								"603a7598acba0b0accada843"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get favorite",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "haufe-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAzYTMzMzZiNWU5YjUxZWY0Yzk3NzMyIn0sImlhdCI6MTYxNDc3NDk3MCwiZXhwIjoxNjE0OTQ3NzcwfQ.7mbTLF_3vnGRa4Cb059PX7NbL1kOdDOsY1DJozyj7Wg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/favorite/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"favorite",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
