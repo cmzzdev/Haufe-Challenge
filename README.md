@@ -1,6 +1,6 @@
 # Haufe-Challenge - Carles 
 
-📖 ## Clone the repository to your local machine 
+## Clone the repository to your local machine 📖 
 
 _Open console terminal and write the follow command_
 
@@ -8,7 +8,7 @@ _Open console terminal and write the follow command_
 git clone https://github.com/cmzzdev/Haufe-Challenge.git
 ```
 
-🚀 ## Install Backend Server and App Client 
+## Install Backend Server and App Client 🚀 
 
 _From console terminal inside Haufe-Challenge forlder you can see two folders: "server" and "client". You may to enter each of them and write the follow command_
 
@@ -34,7 +34,7 @@ _If the browser has not been opened, need to enter your browser and enter the fo
 http://localhost:3000
 ```
 
-📋 ## App developed with 
+## App developed with 📋 
 * React
 * Redux
 * Hooks
@@ -46,11 +46,11 @@ http://localhost:3000
 * Sass
 * CSS
 
-📦 ## App workflow 
+## App workflow 📦 
 
 
 
-✒️ ## Author 
+## Author ✒️ 
 
 * **Carles Martínez** - *Web Developer Analyst* - [LinkedIn](https://www.linkedin.com/in/carles-martinez/)
 
