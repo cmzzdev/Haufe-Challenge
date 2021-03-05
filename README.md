@@ -34,6 +34,16 @@ _If the browser has not been opened, need to enter your browser and enter the fo
 http://localhost:3000
 ```
 
+## Backend Info 
+
+Non-relational database used is MongoDB. Used **MongoDB Atlas** account based on cloud. I've url serv to attack them. If you want to see the archicture of that, I can share my screen to show you MongoDB Compass UI or MongoDB Atlas account profile.
+
+In the root of the repository I have put a collection of **POSTMAN,** you import them to your postman and test the different request to the API
+
+```
+Haufe Rick Morty.postman_collection
+```
+
 ## Backend dependencies ⚙️
 
 * **axios:** Make requests to external API
