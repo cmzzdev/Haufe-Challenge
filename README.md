@@ -34,6 +34,16 @@ _If the browser has not been opened, need to enter your browser and enter the fo
 http://localhost:3000
 ```
 
+## Backend dependecies ⚙️
+* **axios:** Make requests to external API
+* **bcryptjs:** Hash password user by SALT phrase and compare them
+* **cors:** Enable CORS middleware
+* **dotenv:** Set environment vars and get it
+* **express-validator:** Validate required fields on api Requests
+* **jsonwebtoken:** Sign token and verify
+* **mongoose:** ODM to use with MongoDB
+* **nodemon:** Auto restart node app when files changes
+
 ## App developed with 📋 
 * React
 * Redux
