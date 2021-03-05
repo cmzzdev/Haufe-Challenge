@@ -8,7 +8,7 @@ _open console terminal and write the follow command_
 git clone https://github.com/cmzzdev/Haufe-Challenge.git
 ```
 
-## Install Backend Servcer and App Client 🚀
+## Install Backend Server and App Client 🚀
 
 _From console terminal inside Haufe-Challenge forlder you can see two folders: "server" and "client". You may to enter each of them and write the follow command_
 
