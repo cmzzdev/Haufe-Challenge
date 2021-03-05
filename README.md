@@ -83,11 +83,11 @@ Haufe Rick Morty.postman_collection
 
 ## App pages 📦 
 
-Login
-Register
-Characters List
-Character Detail
-404 Error Page
+* Login
+* Register
+* Characters List
+* Character Detail
+* 404 Error Page
 
 ## Author ✒️ 
 
