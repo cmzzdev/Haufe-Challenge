@@ -40,6 +40,8 @@ Non-relational database used is MongoDB. Used **MongoDB Atlas** private account 
 
 In the root of the repository I have put a collection of **POSTMAN,** you can import them to your postman and test the different request to the API
 
+req header for token: **haufe-token** : value
+
 ```
 Haufe Rick Morty.postman_collection
 ```
