@@ -1,6 +1,6 @@
 # Haufe-Challenge - Carles 
 
-IMPORTANT: If you cannot connect to the mongodb cluster, please contact with me: carmar85@gmail.com
+IMPORTANT: Mongodb cluster is down, if you want test the apps, please contact with me: carmar85@gmail.com
 
 ## Clone the repository to your local machine 📖 
 
